@@ -1,0 +1,44 @@
+; Run control parameters
+integrator                = md         ; molecular dynamics integrator
+nsteps                    = 5000000 ; number of steps
+dt                        = 0.020      ; time step for integration
+
+; Output control options
+nstlog                    = 50000      ; write energies to the log file
+nstcalcenergy             = 500        ; calculate energies every this many steps
+nstenergy                 = 500        ; write energies to energy file
+nstxout                   = 50000      ; write positions and velocities to trr file
+
+;Neighbour searching parameters
+cutoff-scheme             = Verlet     ; particle based cutoff
+verlet-buffer-tolerance   = -1
+rlist                     = 2.0        ; cutoff distance for long range neighbor list
+
+; Options for vdW
+vdwtype                   = shift      ; method for van der Waals
+rvdw-switch               =  1.0       ; switch (nm)
+rvdw                      =  1.2       ; cutoff (nm)
+
+; Options for electrostatics
+coulombtype               = PME        ; method for electrostatics
+rcoulomb                  = 1.2        ; cutoff (nm)
+epsilon-r                 = 80         ; Relative dielectric constant for the medium
+fourierspacing            = 0.2        ; grid spacing for FFT
+pme-order                 = 4          ; interpolation order for PME
+                                       
+; Generate velocities                  
+gen-vel                   = yes        ; generate velocities
+gen-temp                  = 300        ; temperature for Maxwell distribution
+                                       
+; Options for thermostat  
+tcoupl                    = v-rescale 
+tc-grps                   = system     ; groups to couple to temperature bath
+tau-t                     = 1.0        ; time constant
+ref-t                     = 300        ; reference temperature
+
+; Options for barostat
+pcoupl                    = no ;parrinello-rahman  ; pressure coupling method
+pcoupltype                = isotropic          ; type of pressure coupling
+tau-p                     = 12.0               ; time constant (ps)
+ref-p                     = 1.01325            ; reference  pressure (bar)
+compressibility           = 3e-4               ; compressibility (1/bar)

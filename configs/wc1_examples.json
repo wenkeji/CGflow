@@ -1,0 +1,23 @@
+{
+  "name": "wc1_examples",
+  "na_model": "Tini_Na",
+  "bead_groups": ["regular", "small", "tini"],
+  "scans": ["st", "cmc"],
+  "forcefield": [
+    {
+      "parameter": "W-C1",
+      "scale_factors": ["1/2", "1", "2"]
+    },
+    {
+      "parameter": "W-C1",
+      "epsilons": [0.5, 1.0, 2.0]
+    }
+  ],
+  "st": {
+    "enabled": true,
+    "n_surfs": [200, 500]
+  },
+  "cmc": {
+    "enabled": true
+  }
+}
