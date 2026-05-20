@@ -24,7 +24,6 @@ GROUP_INFO_NAME = "task_group.json"
 EXPERIMENT_INFO_NAME = "experiment.json"
 TASK_INFO_NAME = "hpc_submit_info.json"
 SUBMIT_SCRIPT_NAME = "submit.lsf"
-DEFAULT_SURFACE_N_SURFS = [2] + list(range(4, 11, 4)) + list(range(20, 201, 10)) + list(range(220, 501, 20))
 BEAD_GROUPS = ("regular", "small", "tini")
 NA_MODELS = ("Tini_Na", "regular_Na")
 DEFAULT_NA_MODEL = "Tini_Na"
@@ -413,7 +412,7 @@ class SurfaceTensionTaskGroupBuilder:
             source_mdp=source_mdp,
             source_gro=source_gro,
             source_top=source_top,
-            n_surfs=list(n_surfs if n_surfs is not None else DEFAULT_SURFACE_N_SURFS),
+            n_surfs=list(n_surfs or []),
             scan_type="structure",
             base_n_surf=cls._read_base_n_surf(source_top),
             bead_group=bead_group,

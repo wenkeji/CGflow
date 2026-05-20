@@ -17,7 +17,7 @@ from workflow.download.runner import download_tasks
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Manually download and unpack completed GROMACS tasks")
+    parser = argparse.ArgumentParser(description="Download tasks listed by JSON metadata files")
     parser.add_argument(
         "inputs",
         nargs="+",

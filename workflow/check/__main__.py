@@ -17,7 +17,7 @@ from workflow.core.tasks import resolve_task_json_inputs
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Check status for one or more GROMACS tasks")
+    parser = argparse.ArgumentParser(description="Check tasks listed by JSON metadata files")
     parser.add_argument(
         "inputs",
         nargs="+",

@@ -17,7 +17,7 @@ from workflow.submit.runner import submit_tasks
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Submit one or more prepared GROMACS tasks")
+    parser = argparse.ArgumentParser(description="Submit tasks listed by JSON metadata files")
     parser.add_argument(
         "inputs",
         nargs="+",

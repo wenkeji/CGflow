@@ -21,7 +21,7 @@ from workflow.core.tasks import load_task_info
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Analyze tasks from experiment, group, or task metadata JSON")
+    parser = argparse.ArgumentParser(description="Analyze tasks listed by JSON metadata files")
     parser.add_argument(
         "inputs",
         nargs="+",
